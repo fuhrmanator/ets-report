@@ -1,6 +1,6 @@
-title: Monash Working Paper Format Template
-author: Rob J Hyndman
-version: 2.0.0
+title: ÉTS Research Report Format Template
+author: Christopher Fuhrman
+version: 0.0.1
 quarto-required: ">= 1.4.0"
 contributes:
   formats:
