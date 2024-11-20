@@ -12,6 +12,7 @@ format: gfm
 library(tidyverse)
 library(quarto)
 library(magick)
+library(pdftools)
 
 # Render template
 quarto_render(input = "template.qmd")
