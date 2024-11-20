@@ -43,27 +43,40 @@ $endif$
 $if(department)$
   \def\name{$department$}
 $else$
-  \def\name{Department of\newline Econometrics \&\newline Business Statistics}
+  \def\name{}
 $endif$
 
 $if(phone)$
   \telephone{$phone$}
 $else$
-  \telephone{(03) 9903 4416}
+  \telephone{}
 $endif$
 
 $if(email)$
   \email{$email$}
 $else$
-  \email{BusEco-Econometrics@monash.edu}
+  \email{}
 $endif$
 
-\def\webaddress{\url{https://www.monash.edu/business/ebs}}
-\def\abn{12 377 614 012}
+$if(reportnumber)$
+  \def\reportnumber{$reportnumber$}
+$else$
+  \def\reportnumber{Please provide a report number in the metadata}
+$endif$
+
+\def\webaddress{\url{https://www.etsmtl.ca}}
 \def\extraspace{\vspace*{1.6cm}}
 \makeatletter
-\def\contactdetails{\faicon{phone} & \@telephone \\
-                    \faicon{envelope} & \@email}
+\def\contactdetails{Service de la bibliothèque\\
+École de technologie supérieure\\
+1100, rue Notre-Dame Ouest\\
+Montréal (Québec)\\
+H3C 1K3\\
+\\
+Phone: +1 514 396-8946\\
+Fax: +1 514 396-8633\\
+Email: \href{mailto:biblio@etsmtl.ca}{biblio@etsmtl.ca}
+}
 \makeatother
 
 \usepackage[absolute,overlay]{textpos}
@@ -72,50 +85,52 @@ $endif$
 
 %%%% FRONT PAGE OF REPORTS
 
-\def\reporttype{Report for}
+\def\reporttype{Technical Report}
 
 \long\def\front#1#2#3{
 \newpage
-\begin{textblock}{7}(12.7,28.2)\hfill
-\includegraphics[height=0.6cm]{AACSB}~~~
-\includegraphics[height=0.6cm]{EQUIS}~~~
-\includegraphics[height=0.6cm]{AMBA}
-\end{textblock}
 \begin{singlespacing}
 \thispagestyle{empty}
 \vspace*{-1.4cm}
 \hspace*{-1.4cm}
 \hbox to 16cm{
-  \hbox to 6.5cm{\vbox to 14cm{\vbox to 25cm{
-    \includegraphics[width=6cm]{monash2}
+  \hbox to 6.5cm{\vbox to 14cm{\vbox to 22cm{
+    \includegraphics[width=6cm]{Logo_ETS_TypoGrise_D_FR_1}
     \vfill
-    \includegraphics[width=2cm]{MBSportrait}
-    \vspace{0.4cm}
-    \par
-    \parbox{6.3cm}{\raggedright
+    % \includegraphics[width=2cm]{MBSportrait}
+    % \vspace{0.4cm}
+    % \par
+    \parbox{3.3cm}{\raggedright
       \sf\color[rgb]{0.00,0.00,0.70}
       {\large\textbf{\name}}\par
-      \vspace{.7cm}
+      % \vspace{.7cm}
       \tabcolsep=0.12cm\sf\small
       \begin{tabular}{@{}ll@{}}\contactdetails
       \end{tabular}
-      \vspace*{0.3cm}\par
-      ABN: \abn\par
+      \vspace*{0.1cm}\par
+      % ABN: \abn\par
     }
   }\vss}\hss}
   \hspace*{0.2cm}
-  \hbox to 1cm{\vbox to 14cm{\rule{1pt}{26.8cm}\vss}\hss\hfill}
-  \hbox to 10cm{\vbox to 14cm{\vbox to 25cm{
-      \vspace*{3cm}\sf\raggedright
+  \hbox to 1cm{\vbox to 14cm{\rule{1pt}{24cm}\vss}\hss\hfill}
+  \hbox to 10cm{\vbox to 14cm{\vbox to 23cm{
+
+      \begin{textblock*}{10cm}(9cm,2cm)
+        \raggedleft
+        \large\sf\textbf{ETS-RT - \reportnumber}
+      \end{textblock*}
+
+      \vspace*{5cm}\sf\raggedright
       \parbox{10cm}{\sf\raggedright\baselineskip=1.2cm
-         \fontsize{24.88}{30}\color[rgb]{0.70,0.00,0.00}\sf\textbf{#1}}
+         \fontsize{24.88}{30}\color[rgb]{0.70,0.00,0.00}\sf\textbf{#1}} % Title
       \par
       \vfill
       \large
-      \vbox{\parskip=0.8cm #2}\par
-      \vspace*{2cm}\par
+      \vbox{\parskip=0.8cm #2}\par % Authors
+      % \vspace*{2cm}\par
+      \vfill
       \reporttype\\[0.3cm]
-      \hbox{#3}%\\[2cm]\
+      \hbox{#3}%\\[2cm]\ \par % Organization
       \vspace*{1cm}
       {\large\sf\textbf{\Date~\Month~\Year}}
    }\vss}

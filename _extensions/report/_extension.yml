@@ -6,16 +6,16 @@ contributes:
   formats:
     pdf:
       documentclass: article
-      papersize: a4
+      papersize: letter
       fontsize: 11pt
       date: today
       date-format: "D MMMM YYYY"
       toc: false
       pdf-engine: pdflatex
       geometry:
-      - top=2.4cm
-      - bottom=2.4cm
-      - left=2.5cm
+      - top=3cm
+      - bottom=4cm
+      - left=4cm
       - right=2.5cm
       block-headings: false
       cite-method: biblatex
@@ -34,9 +34,6 @@ contributes:
       template-partials:
         - "before-title.tex"
         - "title.tex"
+        - "before-body.tex"
       format-resources:
-        - monash2.png
-        - MBSportrait.jpg
-        - EQUIS.png
-        - AMBA.png
-        - AACSB.png
+        - Logo_ETS_TypoGrise_D_FR_1.png
