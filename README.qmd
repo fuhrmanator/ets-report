@@ -4,6 +4,8 @@ format: gfm
 
 <!-- README.md is generated from README.qmd. Please edit that file -->
 
+<!-- You must have installed R, as well as the R packages tidyverse, quarto, magick -->
+
 ```{r}
 #| include: false
 # Create pdf and png version of template
@@ -13,7 +15,7 @@ library(magick)
 
 # Render template
 quarto_render(input = "template.qmd")
-fs::file_delete(c("AACSB.png","AMBA.png","EQUIS.png","MBSportrait.jpg","monash2.png"))
+fs::file_delete(c("Logo_ETS_TypoGrise_D_FR_1.png"))
 # Convert rendered PDF to PNG
 image_read_pdf("template.pdf", pages = 1) |>
   image_montage(geometry = "x2000+25+35", tile = "1", bg = "grey92", shadow = TRUE) |>
@@ -23,9 +25,9 @@ image_read_pdf("template.pdf", pages = 1) |>
 fs::file_move("template.pdf", "examples/template.pdf")
 ```
 
-# Monash Report Format Template
+# ETS Format Template
 
-This is a Quarto template that assists you in creating a Monash University report.
+This is a Quarto template that assists you in creating a technical report for École de technologie supérieure (experimental - not official).
 
 ## Creating a new report
 
@@ -33,7 +35,7 @@ You can use this as a template to create a report.
 To do this, use the following command:
 
 ```bash
-quarto use template quarto-monash/report
+quarto use template fuhrmanator/ets-report
 ```
 
 This will install the extension and create an example qmd file that you can use as a starting place for your report.
@@ -44,7 +46,7 @@ You may also use this format with an existing Quarto project or document.
 From the quarto project or document directory, run the following command to install this format:
 
 ```bash
-quarto install extension quarto-monash/report
+quarto install extension fuhrmanator/ets-report
 ```
 
 ## Example
