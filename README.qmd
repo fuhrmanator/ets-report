@@ -1,5 +1,7 @@
 ---
 format: gfm
+# define a variable for the git repo
+repo: fuhrmanator/ets-report
 ---
 
 <!-- README.md is generated from README.qmd. Please edit that file -->
@@ -26,7 +28,7 @@ image_read_pdf("template.pdf", pages = 1) |>
 fs::file_move("template.pdf", "examples/template.pdf")
 ```
 
-# ETS Format Template
+# Template for ÉTS Technical Reports
 
 This is a Quarto template that assists you in creating a technical report for École de technologie supérieure (experimental - not official).
 
@@ -36,7 +38,7 @@ You can use this as a template to create a report.
 To do this, use the following command:
 
 ```bash
-quarto use template fuhrmanator/ets-report
+quarto use template {{< meta repo >}}
 ```
 
 This will install the extension and create an example qmd file that you can use as a starting place for your report.
@@ -47,7 +49,7 @@ You may also use this format with an existing Quarto project or document.
 From the quarto project or document directory, run the following command to install this format:
 
 ```bash
-quarto install extension fuhrmanator/ets-report
+quarto install extension {{< meta repo >}}
 ```
 
 ## Example

@@ -3,7 +3,7 @@
 <!-- README.md is generated from README.qmd. Please edit that file -->
 <!-- You must have installed R, as well as the R packages tidyverse, quarto, magick -->
 
-# ETS Format Template
+# Template for ÉTS Technical Reports
 
 This is a Quarto template that assists you in creating a technical
 report for École de technologie supérieure (experimental - not
