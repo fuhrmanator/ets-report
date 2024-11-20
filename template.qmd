@@ -1,12 +1,13 @@
 ---
 title: "Some wonderful title"
 author:
-- name: Christopher Fuhrman
-  email: christopher.fuhrman@etsmtl.ca
-- name: Roberto Erick Lopez-Herrejon
+- name: Marie Curie
+  email: marie.curie@example.com
+- name: Albert Einstein
+  email: toutestrelatif@example.com
 # phone: (03) 9905 2478
 # email: BusEco-Econometrics@monash.edu
-organization: Department of Software and IT Engineering
+organization: Atomic Engineering Department
 reportnumber: 20xx-xxx
 bibliography: references.bib
 format: report-pdf
