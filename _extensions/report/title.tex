@@ -87,6 +87,18 @@ Email: \href{mailto:biblio@etsmtl.ca}{biblio@etsmtl.ca}
 
 \def\reporttype{Technical Report}
 
+\usepackage{ifthen}
+% Define possible paths
+% Quarto extension after it's installed
+\def\logopathA{_extensions/fuhrmanator/report/Logo_ETS_TypoGrise_D_FR_1}
+% Quarto extension before it's installed (there's no github username)
+\def\logopathB{_extensions/report/Logo_ETS_TypoGrise_D_FR_1}
+
+% Macro to check file existence and include graphic
+\newcommand{\includegraphicspath}[2][]{%
+  \IfFileExists{#2}{\includegraphics[#1]{#2}}{}%
+}
+
 \long\def\front#1#2#3{
 \newpage
 \begin{singlespacing}
@@ -95,7 +107,10 @@ Email: \href{mailto:biblio@etsmtl.ca}{biblio@etsmtl.ca}
 \hspace*{-1.4cm}
 \hbox to 16cm{
   \hbox to 6.5cm{\vbox to 14cm{\vbox to 22cm{
-    \includegraphics[width=6cm]{Logo_ETS_TypoGrise_D_FR_1}
+    % display one or the other logo
+    \includegraphicspath[width=6cm]{\logopathA}
+    \includegraphicspath[width=6cm]{\logopathB}
+    % \includegraphics[width=6cm]{_extensions/fuhrmanator/report/Logo_ETS_TypoGrise_D_FR_1}
     \vfill
     % \includegraphics[width=2cm]{MBSportrait}
     % \vspace{0.4cm}

@@ -35,5 +35,3 @@ contributes:
         - "before-title.tex"
         - "title.tex"
         - "before-body.tex"
-      format-resources:
-        - Logo_ETS_TypoGrise_D_FR_1.png
